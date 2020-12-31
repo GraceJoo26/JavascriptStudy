@@ -1,3 +1,4 @@
+
 // Function
 // - fundamental building block in the program
 // - subprogram can be used multiple times
@@ -27,9 +28,9 @@ log(1234);
 function changeName(obj){
     obj.name = 'coder';
 }
-const ellie = { name: 'ellie'};
-changeName(ellie);
-console.log(ellie);
+const elllie = { name: 'ellie'};
+changeName(elllie);
+console.log(elllie);
 
 // 3. Default parameters (added in ES6)
 /* function showMessage(message, from){ // 누구로부터 메시지가 왔는지 출력
@@ -73,6 +74,10 @@ function printMessage(){
     let message = 'hello';
     console.log(message); //local variable
     console.log(globalMessage);
+    function printAnother() {
+        console.log(message);
+        let childMessage = 'hello';
+      }
 }
 printMessage();// 함수안:local, 함수밖:global-> 밖에서는 안이 보이지 않고 안에서만 밖을 볼 수 있다.
 
@@ -92,7 +97,7 @@ function upgradeUser(user){
 }
 // good case
 function upgradeUser(user){
-    if(user.point <= 0){
+    if(user.point <= 10){
         return; // 함수 충족 안 될 것 같으면 여기다 로직 쓰지말고 바로 리턴시키고(로딩 시간단축)
     } 
     //long upgrade logic...
@@ -131,7 +136,7 @@ function randomQuiz(answer, printYes, printNo){
 //anonymous function
 const printYes = function() {
     console.log('yes!');
-} ;
+};
 
 //named function
 //better debugging in debugger's stack traces
@@ -144,15 +149,19 @@ randomQuiz('love you', printYes, printNo);
 
 // Arrow function
 // always anonymous
-const simplePrint = function(){
-    console.log('simplePrint');
-};
+//const simplePrint = function(){
+//   console.log('simplePrint');
+//};
 
 /* const simplePrint = () {
     console.log('simplePrint!');
 }; */
 const simplePrint = () => console.log('simplePrint!');
-const add = (a , b) => a + b;
+const add = (a , b) => a + b; 
+const simpleMultiply = (a , b) => {
+    //do something more
+    return a * b;
+};
 
 
 // IIFE: Immediately Invoked Function Expression
@@ -163,3 +172,4 @@ const add = (a , b) => a + b;
 // fun quiz time
 // function calculate (command, a , b)
 //command : add, substract, divide, multiply, remainder
+
