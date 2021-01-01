@@ -14,8 +14,8 @@
 // class는 데이터화 되질 않아 메모리로 저장 X, but object는 메모리에도 올라가게 된다.
 
 // Object-oriented programming
-// class : template
 // object : instance of a class
+// class : template
 // JavaScript classes
 //  - introduced in ES6
 //  - syntactical sugar over prototype-based inheritance
