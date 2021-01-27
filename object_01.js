@@ -48,8 +48,27 @@ var student = {
     name:'연하진',
     Korean:92, Math:98, English:96, Science:98
 };
-
+/* 
 // in keyword 사용
 output += "'name' in student :"+('name' in student) +'\n';
-//출력
-console.log(output);
+output += "'gender' in student: " + ('gender' in student); 
+// */
+
+/* output += 'name:' + student.name + '\n';
+output += 'Korean:' + student.Korean + '\n';
+output += 'Math:' + student.Math + '\n';
+output += 'English:' + student.English + '\n';
+output += 'Science:' + student.Science + '\n';
+output += 'total:' + (student.Korean + student.Math + student.English + student.Science); */
+
+//with 썼을 때! -->위에 것을 좀 간단히 쓰는 것 
+//with 을 쓺으로서 student
+with (student){
+    output += 'name:' + name + '\n';
+    output += 'Korean:'+ Korean + '\n';
+    output += 'Math:'+ Math +'\n';
+    output += 'English:' + English + '\n';
+    output += 'Science' + Science + '\n';
+    output += 'total:' +(Korean + Math + English + Science);
+    }
+    console.log(output);

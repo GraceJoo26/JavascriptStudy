@@ -107,3 +107,54 @@ C++ , JAVA , C# => 객체 내부에서 this키워드 생략 가능하다. 하지
     	·supportOS:Win 32/64
     	·subscription:true
 
+
+
+### 6.4 객체와 관련된 키워드
+
+```
+1. In
+ 
+ //객체선언
+   var output = '';
+   var student = {
+     name:'연하진',
+     Korean:92, Math:98, English:96, Science:98
+   };
+   
+ //in keyword 사용
+   output += "'name' in student :"+('name' in student) +'\n';
+   output += "'gender' in student: " + ('gender' in student); 
+
+ //출력
+   console.log(output);
+
+2. With
+ output += 'name:' + student.name + '\n';
+ output += 'Korean:' + student.Korean + '\n';
+ output += 'Math:' + student.Math + '\n';
+ output += 'English:' + student.English + '\n';
+ output += 'Science:' + student.Science + '\n';
+ output += 'total:' + (student.Korean + student.Math + student.English + student.Science);
+ 
+=>
+with (student){
+ output += 'name:' + name + '\n';
+ output += 'Korean:'+ Korean + '\n';
+ output += 'Math:'+ Math +'\n';
+ output += 'English:' + English + '\n';
+ output += 'Science' + Science + '\n';
+ output += 'total:' +(Korean + Math + English + Science);
+ }
+ 
+ with 키워드 사용시 변수 이름 충돌 해결방법
+ var output = '';
+ with (student) {
+ 	window.output +='name:' + name + '\n';
+ 	window.output += 'Korean:'+ Korean + '\n';
+ 	window.output += 'Math:'+ Math +'\n';
+ 	window.output += 'English:' + English + '\n';
+ 	window.output += 'Science' + Science + '\n';
+ 	window.output += 'total:' +(Korean + Math + English + Science);
+ }
+```
+
