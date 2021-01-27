@@ -14,3 +14,10 @@ var object = {
 };
 console.log(object['with space']);
 console.log(object['with ~!12!@#$@!!@#']);
+var person = {
+    name:'Grace',
+    eat: function(food){
+        alert(this.name + '가' + food +'을/를 먹습니다.');
+    }
+}
+person.eat('밥');
