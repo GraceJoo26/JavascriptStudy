@@ -63,7 +63,7 @@ output += 'total:' + (student.Korean + student.Math + student.English + student.
 
 //with 썼을 때! -->위에 것을 좀 간단히 쓰는 것 
 //with 을 쓺으로서 student
-with (student){
+/* with (student){
     output += 'name:' + name + '\n';
     output += 'Korean:'+ Korean + '\n';
     output += 'Math:'+ Math +'\n';
@@ -71,4 +71,44 @@ with (student){
     output += 'Science' + Science + '\n';
     output += 'total:' +(Korean + Math + English + Science);
     }
-    console.log(output);
+  */
+
+
+    var students = [];
+    var student0 ={이름:'주유진',국어:'87',수학:'98',영어:'88',과학:'100'};
+    var student1 ={이름:'주요진',국어:'87',수학:'98',영어:'88',과학:'100'};
+    var student2 ={이름:'주시진',국어:'87',수학:'98',영어:'88',과학:'100'};
+    var student3 ={이름:'주지진',국어:'87',수학:'98',영어:'88',과학:'100'};
+    var student4 ={이름:'주비진',국어:'87',수학:'98',영어:'88',과학:'100'};
+    var student5 ={이름:'주수진',국어:'87',수학:'98',영어:'88',과학:'100'};
+    var student6 ={이름:'주재진',국어:'90',수학:'100',영어:'80',과학:'50'};
+    var student7 ={이름:'주기진',국어:'87',수학:'98',영어:'88',과학:'100'};
+    var student8 ={이름:'주세진',국어:'87',수학:'98',영어:'88',과학:'100'};
+    var student9 ={이름:'주추진',국어:'87',수학:'98',영어:'88',과학:'100'};
+    
+    students.push({이름:'주유진',국어:'87',수학:'98',영어:'88',과학:'100'});
+    students.push({이름:'주요진',국어:'87',수학:'98',영어:'88',과학:'100'});
+    students.push({이름:'주시진',국어:'87',수학:'98',영어:'88',과학:'100'});
+    students.push({이름:'주지진',국어:'87',수학:'98',영어:'88',과학:'100'});
+    students.push({이름:'주비진',국어:'87',수학:'98',영어:'88',과학:'100'});
+    students.push({이름:'주수진',국어:'87',수학:'98',영어:'88',과학:'100'});
+    students.push({이름:'주재진',국어:'87',수학:'98',영어:'88',과학:'100'});
+    students.push({이름:'주기진',국어:'90',수학:'100',영어:'80',과학:'50'});
+    students.push({이름:'주세진',국어:'87',수학:'98',영어:'88',과학:'100'});
+    students.push({이름:'주추진',국어:'87',수학:'98',영어:'88',과학:'100'});
+    
+    for (var i in students){
+      students[i].getSum = function(){
+        return this.국어 + this.수학 + this.영어 + this.과학;
+      };
+      students[i].getAverage = function(){
+        return this.getSum()/4;
+      };
+    }
+    var output = '이름\t총점\t\평균\n';
+    for (var i in students){
+      with (students [i]){
+        output += 이름 + '\t' + getSum()+ '\t' + getAverage() + '\n';
+      }
+    }
+    alert(output);
