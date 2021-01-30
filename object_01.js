@@ -105,7 +105,7 @@ output += 'total:' + (student.Korean + student.Math + student.English + student.
         return this.getSum()/4;
       };
     }
-    var output = '이름\t총점\t\평균\n';
+    var output = '이름\t총점\t평균\n';
     for (var i in students){
       with (students [i]){
         output += 이름 + '\t' + getSum()+ '\t' + getAverage() + '\n';
