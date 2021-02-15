@@ -175,13 +175,13 @@ for (var i in student){
 alert(output); */
 
 //프로토타입
-function Student(name, korean, math, english, science) {
+/* function Student(name, korean, math, english, science) {
   this.이름 = name,
   this.국어 = korean,
   this.수학 = math,
   this.영어 = english,
   this.과학 = science
-  /* this.getSum = function () {
+  this.getSum = function () {
     return this.국어 + this.수학 + this.영어 + this.과학;
   },
   this.getAverage = function () {
@@ -189,7 +189,7 @@ function Student(name, korean, math, english, science) {
   },
   this.toString = function () {
     return this.이름 + "\t" + this.getSum() + "\t" + this.getAverage();
-  } */
+  }
 }
 Student.prototype.getSum = function () {
   return this.국어 + this.수학 + this.영어 + this.과학;
@@ -211,4 +211,14 @@ for (var i in student){
   output += student[i].toString() + "\n";
 }
 alert(output);
+ */
+//instanceof 키워드
+function Student(name) {
+  this.name = name;
+}
+var student = new Student("주유진");
 
+alert(student instanceof Student);
+alert(student instanceof Number);
+alert(student instanceof String);
+alert(student instanceof Boolean);

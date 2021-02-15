@@ -348,5 +348,23 @@ Student.prototype.toString = function () {
 
 ### 6.10 instanceof
 
+```
+function Student(name) {
+  this.name = name;
+}
+var student = new Student("주유진");
 
+alert(student instanceof Student);
+alert(student instanceof Number);
+alert(student instanceof String);
+alert(student instanceof Boolean);
+```
+
+true
+
+false
+
+false
+
+false
 
