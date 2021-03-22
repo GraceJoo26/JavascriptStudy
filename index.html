@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <!-- <script src="variable.js"></script>
     <script src="operator.js"></script>
     <script src="function.js"></script>
     <script src="class.js"></script> -->
-    <script src="while.js"></script>
+  <!--   <script src="while.js"></script> -->
 </head>
-<body></body>
+<body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id = "app">
+        <!--하위 컴포넌트에 상위 컴포넌트가 갖고 있는 message를 전달함-->
+        <child-component v-bind:propsdata = "message"></child-component>
+    </div>
+   <script>
+       //하위 컴포넌트
+       Vue.component("child-component", {
+        props:["propsdata"],
+        template:'<p>{{ propsdata }}</p>'
+       });
+
+       //상위 컴포넌트
+       var app = new Vue({
+           el: "#app",
+           data:{
+               message: "Hello Vue! from Parent Component"
+           }
+       });
+    </script>
+</body>
 </html>
 
