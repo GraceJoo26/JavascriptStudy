@@ -32,6 +32,24 @@
                message: "Hello Vue! from Parent Component"
            }
        });
+
+       var eventBus = new Vue();
+       new Vue({
+           methods: {
+               callAnyMentho(){
+
+               }
+           },
+           created(){
+               var vm = this;
+               eventBus.$on("refresh", function(data){
+                   console.log(data)
+                   vm.callAnyMethod();
+               });
+           }
+       });
+
+
     </script>
 </body>
 </html>
